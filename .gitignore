@@ -1,1 +1,18 @@
-cd packages/Header/node_modules
+# Node modules
+node_modules/
+
+# pnpm store (optional, if you ever check in .pnpm)
+.pnpm/
+
+# Build outputs
+packages/*/dist/
+
+# Lockfiles
+**/pnpm-lock.yaml
+
+# VSCode settings
+.vscode/
+
+# OS/temp files
+.DS_Store
+Thumbs.db
