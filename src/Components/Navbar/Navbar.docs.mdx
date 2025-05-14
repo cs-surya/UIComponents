@@ -1,0 +1,35 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import Navbar from './Navbar';
+import { Default, CustomColors } from './Navbar.stories';
+
+<Meta
+  title="Components/Navbar"
+  component={Navbar}
+  parameters={{
+    docs: {
+      description: {
+        component: 'A responsive top-of-page navbar built with `mdb-react-ui-kit` and `react-scroll`.',
+      },
+    },
+  }}
+/>
+
+# Navbar
+
+> A simple, customizable navigation bar.
+
+## Usage
+
+```tsx
+import Navbar from 'src/Components/Navbar/Navbar';
+
+function App() {
+  return (
+    <Navbar
+      bgColor="#000"
+      linkColor="#fff"
+      data={['Home', 'About', 'Services', 'Contact']}
+      brand={{ text: 'Surya', href: '/' }}
+    />
+  );
+}

@@ -1,0 +1,68 @@
+{
+  "name": "uicomponents",
+  "version": "1.0.0",
+  "description": "open source",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@storybook/addon-docs": "^8.6.12",
+    "babel-plugin-styled-components": "^2.1.4",
+    "mdb-react-ui-kit": "^6.3.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.11.0",
+    "react-markdown": "^8.0.7",
+    "react-scroll": "^1.8.9",
+    "styled-components": "^6.0.7",
+    "typed.js": "^2.0.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cs-surya/UIComponents.git"
+  },
+  "author": "suryacs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cs-surya/UIComponents/issues"
+  },
+   "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "jsdom",
+    "moduleFileExtensions": ["js","jsx","ts","tsx"],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "setupFilesAfterEnv": ["@testing-library/jest-dom"]
+  },
+
+
+  "homepage": "https://github.com/cs-surya/UIComponents#readme",
+  "devDependencies": {
+    "@mdx-js/loader": "^3.1.0",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-interactions": "^8.6.12",
+    "@storybook/addon-onboarding": "^8.6.12",
+    "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
+    "@storybook/blocks": "^8.6.12",
+    "@storybook/react": "^8.6.12",
+    "@storybook/react-webpack5": "^8.6.12",
+    "@storybook/test": "^8.6.12",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/jest": "^29.5.14",
+    "babel-loader": "^10.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "rollup": "^4.40.2",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "storybook": "^8.6.12",
+    "ts-jest": "^29.3.2",
+    "typescript": "^5.8.3"
+  }
+}
