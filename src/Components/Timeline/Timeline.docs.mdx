@@ -1,0 +1,51 @@
+import { Meta, Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import Timeline from './Timeline';
+import { Default } from './Timeline.stories';
+
+<Meta
+  title="Components/Timeline"
+  component={Timeline}
+  parameters={{
+    docs: {
+      description: {
+        component: 'A responsive, alternating timeline component for showcasing work or education experience using `mdb-react-ui-kit` and `react-helmet`.',
+      },
+    },
+  }}
+/>
+
+# Timeline
+
+> A visually engaging timeline section with metadata SEO support and skill tagging.
+
+## Usage
+
+```tsx
+import Timeline from 'src/components/Timeline/Timeline';
+
+const metadata = {
+  skills: ['React', 'TypeScript', 'Node.js']
+};
+
+const entries = [
+  {
+    id: 'entry1',
+    designation: 'Frontend Developer',
+    company: 'Tech Solutions',
+    year: '2023',
+    description: 'React, Tailwind CSS, Vite',
+    jobDescription: <p>Built reusable UI components and optimized performance for SPAs.</p>
+  },
+  {
+    id: 'entry2',
+    designation: 'Backend Developer',
+    company: 'CodeBase Inc.',
+    year: '2022',
+    description: 'Node.js, Express, MongoDB',
+    jobDescription: <p>Developed REST APIs and integrated user authentication systems.</p>
+  }
+];
+
+function App() {
+  return <Timeline metadata={metadata} entries={entries} />;
+}

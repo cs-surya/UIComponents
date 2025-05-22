@@ -9,6 +9,21 @@ interface TimelineProps {
   metadata: Metadata;
   entries: TimelineEntry[];
 }
+interface TechnologyProps {
+  names: string[];
+}
+
+const Technology: React.FC<TechnologyProps> = ({ names }) => {
+  return (
+    <div className="technologies">
+      {names.map((name, index) => (
+        <span key={index} className="technology">
+          {name}
+        </span>
+      ))}
+    </div>
+  );
+};
 
 const Timeline: React.FC<TimelineProps> = ({ metadata, entries }) => {
   return (
@@ -30,15 +45,10 @@ const Timeline: React.FC<TimelineProps> = ({ metadata, entries }) => {
                   <h4 className="timeline-company">{entry.company}</h4>
                   <h5 className="timeline-year">{entry.year}</h5>
 
-                  {entry.description && (
-                    <div className="technologies">
-                      {entry.description.split(", ").map((tech, i) => (
-                        <span key={i} className="technology">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                 {metadata.skills && (
+  
+  <Technology names={metadata.skills} />
+)}
 
                   {entry.jobDescription && (
                     <div className="timeline-job-description d-none d-md-block">

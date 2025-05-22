@@ -1,7 +1,7 @@
 // src/stories/Timeline.stories.tsx
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
-import Timeline from "./Timeleine";
+import Timeline from "./Timeline";
 import type { TimelineEntry, Metadata } from "./Timeline.types";
 
 export default {
