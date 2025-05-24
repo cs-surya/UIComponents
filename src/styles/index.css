@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+/* Apply Roboto font to the entire body text */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700; /* Adjust font weight for headings */
+ 
+}
+h5{
+  margin-bottom: 30px;
+}
+/* Example: Set font size and line height for body text */
+p {
+  font-size: 16px;
+  line-height: 1.5;
+
+}
+
+/* Example: Set font size and styles for headings */
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
+}
+/* The actual timeline (the vertical ruler) */
+
+.main-timeline {
+  position: relative;
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: #939597;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.extra-black-bg {
+  background-color: #000; /* Use a black color code, or adjust it as needed */
+  color :white;
+}
+
+/* Container around content */
+.timeline {
+  position: relative;
+  background-color: inherit;
+  width: 32%;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 20px; /* Add space between timeline entries */
+}
+
+.timeline:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* The circles on the timeline */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -13px;
+  background-color: #939597;
+  border: 5px solid #dc3545;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.btn-footer {
+  color: #dc3545;
+}
+.hero-text {
+  color: hsl(354, 76%, 60%);
+}
+
+
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.technology {
+  background-color: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  border: 1px solid #000;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+
+.active {
+  color: #dc3545; /* Change to your desired active link color */
+  font-weight: bold; /* Change to your desired active link font weight */
+}
+.nav-link {
+  color: white;
+  text-decoration: none; /* Remove underline */
+  transition: color 0.2s; /* Smooth color transition on hover */
+}
+
+/* Style for the link when it's active or on hover (pink color) */
+.nav-link.active
+{ color: #dc3545;
+
+}
+.nav-link:hover {
+  color: #007bff;
+}
+/* You can customize the hover effect and link styles further as needed */
+
+/* Place the container to the left */
+.left {
+  padding: 0px 40px 20px 0px;
+  left: 18%;
+}
+
+/* Place the container to the right */
+.right {
+  padding: 0px 0px 20px 40px;
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -12px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timeline to the left */
+  .main-timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .timeline {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 18px;
+  }
+
+  .left::before {
+    right: auto;
+  }
+  .left {
+    left: 0%;
+  }
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+/* Timeline card styling */
+.timeline-card {
+  background-color: #fff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 5px 0; /* Add space between cards */
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-15px); /* Move tech item up slightly on hover */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Box shadow on hover */
+    background-color: black; /* Background color for tech items */
+  border: 1px solid black; 
+ color:white
+}
+
+/* Customize text styles within the card */
+.timeline-designation {
+  font-size: 20px;
+  color: #007bff; /* Blue color for designation */
+  margin-bottom: 8px;
+}
+
+.timeline-description {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-top: 10px;
+  color: #333; /* Change the color to match your design */
+}
+
+.timeline-company {
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
+
+.timeline-year {
+  font-size: 16px;
+  color: #6c757d; /* Gray color for year */
+}
+
+
+/* Tech Item Styles */
+.tech-item {
+  background-color: #fff; /* Background color for tech items */
+  border: 1px solid #ddd; /* Border around tech items */
+  padding: 30px; /* Spacing inside tech items */
+  border-radius: 5px; /* Rounded corners for tech items */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for tech items */
+  transition: transform 0.2s, box-shadow 0.2s; /* Transition effect on hover */
+  color: black;
+  margin-bottom: 40px; /* Add space in the bottom */
+}
+
+.job{
+  color:black;
+}
+
+.job:hover{
+  color: white;
+}
+.tech-item:hover {
+  transform: translateY(-25px); /* Move tech item up slightly on hover */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Box shadow on hover */
+    background-color: black; /* Background color for tech items */
+  border: 1px solid black; 
+  color: white;
+}
+
+/* Tech Icon Styles */
+.tech-icon {
+  color: #007bff; /* Color of tech icons */
+  width: 50px; /* Adjust the size as needed */
+  height: 50px;
+}
+
+/* Tech Stack Titles */
+h5 {
+  font-size: 1.25rem; /* Font size for tech stack titles */
+  margin-top: 1rem; /* Spacing above titles */
+}
+
+.text-color {
+  color: white;
+}
+
+.custom-text{
+  margin: 0 10px;
+}
+/* Tech Stack Description */
+.text-muted {
+  font-size: 1rem; /* Font size for tech stack descriptions */
+  margin-top: 0.5rem; /* Spacing above descriptions */
+}
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Display 5 columns in a row */
+  gap: 20px; /* Adjust the gap between icons and text */
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.icon-grid-1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Display 5 columns in a row */
+  gap: 10px; /* Adjust the gap between icons and text */
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.icon-item img {
+  max-width: 64px; /* Adjust the max width of the icon */
+  height: 40px;
+}
+
+/* Add this CSS to your stylesheet or create a new CSS file */
+
+.cta {
+  /* Background color for the CTA section */
+  /* Text color */
+  text-align: center;
+  margin-top: 30px; /* Add space from the top */
+  margin-bottom: 30px; /* Add space from the bottom */
+  max-width: 600px; /* Adjust the maximum width as needed */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 23px;
+}
+
+.cta-text {
+  font-size: 21px;
+  font-style: oblique;
+  margin-bottom: 30px;
+  text-align: center;
+
+  word-wrap: break-word;
+}
+/* Add this CSS to your component's stylesheet or a global stylesheet */
+.custom-title {
+  /* Apply your desired styles here */
+  font-size: 24px; /* Adjust the font size as needed */
+  color: black; /* Set the color to #dc3545 */
+  position: relative; /* Position relative for pseudo-element */
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.custom-title::before {
+  content: ""; /* Create a pseudo-element */
+  position: absolute;
+  bottom: -5px; /* Adjust the distance of the underline */
+  left: 0;
+  width: 6%;
+  height: 2px; /* Adjust the height of the underline */
+  background-color: #dc3545; /* Set the underline color */
+}
+
+.custom-title-1{
+  /* Apply your desired styles here */
+ /* Adjust the font size as needed */
+  color: white; /* Set the color to #dc3545 */
+  position: relative; /* Position relative for pseudo-element */
+ 
+  margin-top: 20px;
+}
+
+.custom-title-1::before {
+  content: ""; /* Create a pseudo-element */
+  position: absolute;
+  bottom: -5px; /* Adjust the distance of the underline */
+  left: 0;
+  width: 8%;
+  height: 2px; /* Adjust the height of the underline */
+  background-color: #dc3545; /* Set the underline color */
+}
+
+.cta-btn {
+  /* Button text color */
+  font-size: 20px;
+  padding: 15px 30px; /* Adjust the padding as needed */
+  text-decoration: none;
+  border-radius: 15px;
+  transition: background-color 0.3s, color 0.3s;
+  
+}
+
+.cta-btn:hover {
+  background-color: #dc3545; /* Button background color on hover */
+  color: #fff; /* Button text color on hover */
+   transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  
+}
+.custom-margin {
+  margin: 0 10px; /* Adjust the margin value as needed */
+}
+.project-card {
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s; /* Add transition to transform and box-shadow */
+  border: 1px solid black;
+  background-color: white;
+  text-align: center;
+  position: relative; /* Add position relative for pseudo-element */
+}
+
+
+
+.project-card:hover {
+  transform: translateY(-25px);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  
+
+}
+
+
+
+.project-link {
+  display: block;
+}
+
+.project-card-image {
+  max-height: 150px;
+  max-width: 300px;
+}
+
+.project-card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.blog-meta {
+  font-size: 0.9rem;
+  color: gray;
+  margin-top: 5px;
+}
+
+.author-name {
+  font-weight: bold;
+}
+
+.blog-date {
+  margin-left: 5px;
+}
+
+
